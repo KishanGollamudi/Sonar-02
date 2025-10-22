@@ -54,6 +54,7 @@ sudo apt install -y openjdk-17-jdk git wget unzip
 java -version
 git --version
 ```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e8d1762d-92c5-4d8b-9ad4-bbee7b4d1637" />
 
 ---
 
@@ -74,12 +75,14 @@ sudo unzip sonarqube-10.6.0.92116.zip
 sudo mv sonarqube-10.6.0.92116 sonarqube
 sudo chown -R sonar:sonar sonarqube
 ```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1ff5d8da-e0e8-49f3-8545-eaafdb531a7c" />
 
 ### Step 3 — Configure SonarQube
 
 ```bash
 sudo nano /opt/sonarqube/conf/sonar.properties
 ```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5a731823-5fe5-4ab8-bcc5-cf177e4c1d29" />
 
 Add:
 
@@ -87,6 +90,7 @@ Add:
 sonar.web.host=0.0.0.0
 sonar.web.port=9000
 ```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b39dd752-c8dd-4907-8d2b-651ef92d4c1b" />
 
 Save and exit (`Ctrl+O`, `Enter`, `Ctrl+X`)
 
@@ -97,6 +101,7 @@ Save and exit (`Ctrl+O`, `Enter`, `Ctrl+X`)
 ```bash
 sudo -u sonar /opt/sonarqube/bin/linux-x86-64/sonar.sh start
 ```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f7486bec-bf65-47d5-ae24-4a18367086e1" />
 
 ### Check Status
 
@@ -104,6 +109,8 @@ sudo -u sonar /opt/sonarqube/bin/linux-x86-64/sonar.sh start
 sudo -u sonar /opt/sonarqube/bin/linux-x86-64/sonar.sh status
 ps aux | grep sonar
 ```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d5c395f7-826b-4647-a5f2-ce8dc2a48ccc" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6118c54e-1eb5-466f-8416-1863db31b68e" />
 
 ---
 
@@ -114,13 +121,15 @@ Visit:
 ```
 http://<your-server-ip>:9000
 ```
+<img width="1920" height="1080" alt="12" src="https://github.com/user-attachments/assets/3cc96dda-2a7f-4a6a-a617-e0c105adb4be" />
+
 
 **Default credentials:**
 
 * Username: `admin`
 * Password: `admin` (you’ll be prompted to change it)
-
 ---
+<img width="1920" height="1080" alt="13" src="https://github.com/user-attachments/assets/85e75bf7-b69f-4b51-9808-5660abdadec8" />
 
 ## 6️⃣ Generate Authentication Token
 
@@ -130,6 +139,7 @@ http://<your-server-ip>:9000
 4. Copy and save the generated token securely.
 
 ---
+<img width="1920" height="1080" alt="14" src="https://github.com/user-attachments/assets/fbb61761-cff0-4670-8b7a-741aebc94a9f" />
 
 ## 7️⃣ Install Sonar Scanner (CLI)
 
@@ -169,6 +179,7 @@ sonar-scanner -v
 Expected output includes version info and Java 17 confirmation.
 
 ---
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9f6d7391-83d3-466a-be05-949f03de0194" />
 
 ## 8️⃣ Clone Your Angular Project
 
@@ -177,6 +188,7 @@ cd ~
 git clone https://github.com/example/Angular-Calc-App.git
 cd Angular-Calc-App
 ```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e0cc4ee7-5839-4529-b2d1-59e2473e3acc" />
 
 ---
 
@@ -187,6 +199,7 @@ Create and edit:
 ```bash
 sudo nano sonar-project.properties
 ```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/78571327-61e5-43cc-b783-2106ec44ecd0" />
 
 Paste (edit placeholders):
 
@@ -209,6 +222,7 @@ sonar.sourceEncoding=UTF-8
 sonar.host.url=http://<your-sonarqube-server-ip>:9000
 sonar.login=<your-generated-token>
 ```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9e0897f0-1dca-413e-a22b-7038b2998c87" />
 
 Example:
 
@@ -237,6 +251,7 @@ INFO: Project root configuration file: sonar-project.properties
 INFO: Analyzing Angular Calculator App
 INFO: EXECUTION SUCCESS
 ```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/524461b4-72f8-4669-a252-429891ab91f3" />
 
 ---
 
@@ -247,6 +262,7 @@ Visit:
 ```
 http://<your-server-ip>:9000/dashboard?id=AngularCalcApp
 ```
+<img width="1920" height="1080" alt="15" src="https://github.com/user-attachments/assets/c6bce075-376f-493f-8534-601bc42cd6a1" />
 
 Review key metrics:
 
@@ -298,27 +314,3 @@ This lab setup allows you to:
 * <img width="1920" height="1080" alt="24" src="https://github.com/user-attachments/assets/825bc815-4683-4e41-9069-0d01e4caa452" />
 
 ---
-
-## 📂 Project
-
-**Repo**: [Angular Calculator App](https://github.com/example/Angular-Calc-App)
-**Dashboard**: `http://<your-sonarqube-server-ip>:9000`
-
----
-
-## 👨‍🔧 Maintainer
-
-Feel free to reach out or fork the repo to enhance your own SonarQube lab environments!
-
----
-
-```
-
-Let me know if you'd like me to:
-
-- Replace placeholder IPs and URLs with real ones
-- Add screenshot links
-- Add badges for test/build status if you're using GitHub Actions or similar
-
-Would you like this turned into a downloadable file or pasted into a GitHub canvas?
-```
